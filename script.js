@@ -1,8 +1,19 @@
 // ----- Functions to implement -----
 
 // 1) myFunc(): persistent counter
+let counter = 0;
+//my counter function
+function myFunc(){
+  counter ++;
+  return counter;
+}
 
 // 2) getRandomNum(max): 1..max int or 0 if invalid
+var random = 
+function getRandomNum(max){
+  Math.floor(Math.random() * 100);  
+   
+}
 
 // 3) myAdder(x, y): numeric sum
 
