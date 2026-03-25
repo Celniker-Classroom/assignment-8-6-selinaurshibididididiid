@@ -1,27 +1,46 @@
 // ----- Functions to implement -----
 
 // 1) myFunc(): persistent counter
-let counter = 0;
-//my counter function
-function myFunc(){
-  counter ++;
-  return counter;
+let count = 0;
+
+function myFunc() {
+    count++;
+    return count;
 }
 
 // 2) getRandomNum(max): 1..max int or 0 if invalid
-var random = 
 function getRandomNum(max){
-  Math.floor(Math.random() * 100);  
-   
+  max=parseInt(max);
+  if (isNaN(max) || max==0) return invalid;
+  return Math.floor(Math.random()*max)+1;
 }
 
 // 3) myAdder(x, y): numeric sum
+function myAdder(x,y){
+  if (isNaN(x) || isNaN(y)) return invalid;
+  return parseFloat(x)+parseFloat(y); 
+}
 
 // 4) distance(x1, y1, x2, y2): Euclidean distance
+function distance(x1, y1, x2, y2) {
+    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+}
 
 // 5) quadratic(a, b, c): roots of ax^2 + bx + c = 0
-
-
+function quadratic(a, b, c) {
+    let disc = b * b - 4 * a * c;
+    if (disc > 0) {
+        let r1 = (-b + Math.sqrt(disc)) / (2 * a);
+        let r2 = (-b - Math.sqrt(disc)) / (2 * a);
+        return [r1, r2];
+    } else if (disc === 0) {
+        return [-b / (2 * a)];
+    } else {
+        let real = (-b / (2 * a));
+        let imag = (Math.sqrt(-disc) / (2 * a));
+        return [real + "+" + imag + "i", real + "-" + imag + "i"];
+    }
+}
 // ----- Helpers -----
 function $(id) { return document.getElementById(id); }
 function setText(id, value) { $(id).textContent = String(value); }
