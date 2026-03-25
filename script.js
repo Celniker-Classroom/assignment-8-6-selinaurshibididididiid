@@ -11,7 +11,7 @@ function myFunc() {
 // 2) getRandomNum(max): 1..max int or 0 if invalid
 function getRandomNum(max){
   max=parseInt(max);
-  if (isNaN(max) || max==0) return invalid;
+  if (isNaN(max) || max==0) return 0;
   return Math.floor(Math.random()*max)+1;
 }
 
